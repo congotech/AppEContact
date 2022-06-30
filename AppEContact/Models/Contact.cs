@@ -14,16 +14,16 @@ namespace AppEContact.Models
         public string Email { get; set; }
         public string Tel { get; set; }
         public string Genre { get; set; }
-        public string UrlPhoto { get; set; }
+        public byte[] Photo { get; set; }
 
-        public Contact(string nomComplet, DateTime dateNaiss, string email, string tel, string genre, string urlPhoto)
+        public Contact(string nomComplet, DateTime dateNaiss, string email, string tel, string genre, byte[] photo)
         {
             NomComplet = nomComplet;
             DateNaiss = dateNaiss;
             Email = email;
             Tel = tel;
             Genre = genre;
-            UrlPhoto = urlPhoto;
+            Photo = photo;
         }
 
         //COnstructor default
