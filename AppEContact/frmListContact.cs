@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppEContact.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace AppEContact
         public frmListContact()
         {
             InitializeComponent();
+        }
+
+        private void frmListContact_Load(object sender, EventArgs e)
+        {
+            BindingList<Contact> lst = new BindingList<Contact>(DBContact.GetListContacts());
+            dtgContact.DataSource = lst;
+            dtgContact.AutoResizeColumns();
+            dtgContact.AllowUserToResizeColumns = true;
+            dtgContact.AllowUserToResizeRows = true;
         }
     }
 }
